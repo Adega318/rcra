@@ -1,7 +1,7 @@
-#const n=4.
-#const r=2.
-pos(0..n-1).
+#const n=3.
+pos(0..(n**2)-1).
 dot(w; b; e).
+
 
 %% def lines
 
@@ -14,11 +14,11 @@ dot(w; b; e).
 :- line(A, A).
 
 % solo vecinos
-:- line(A, B), |A/r-B/r|>1.
-:- line(A, B), |A\r-B\r|>1.
+:- line(A, B), |A/n-B/n|>1.
+:- line(A, B), |A\n-B\n|>1.
 
 % no diagonales
-:- line(A, B), |A\r-B\r|+|A/r-B/r| >1.
+:- line(A, B), |A\n-B\n|+|A/n-B/n| >1.
 
 % no salir a multiples
 :- line(A, B), line(B, C), line(B, D), A!=C, A!=D, C!=D.
@@ -29,19 +29,14 @@ dot(w; b; e).
 reach(A, B) :- line(A, B).
 reach(A, C) :- reach(A, B), line(B, C), A!=C.
 
+% todas las lineas conectadas
 :- line(A, B), line(C, D), not reach(B,C), not reach(A,C).
 
 
 %% nodes
 
-4{nod(A): pos(A)}n .
-
-% nodo entre lineas
-:- line(A, B), line(B, A), line(B, C), line(C, B), not nod(B), A!=C.
-
-% no nodos extremos
-:- nod(B), not line(_, B), not line(B, _).
-
+nod(A) :- line(A, _).
+:- nod(A), not 4{line(_, A); line(A, _)}.
 
 %% def points
 
@@ -60,4 +55,3 @@ reach(A, C) :- reach(A, B), line(B, C), A!=C.
 %point(9, e).
 
 #show line/2.
-#show nod/1.
