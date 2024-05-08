@@ -1,8 +1,10 @@
 pos(0..(n**2)-1).
 
-%% def lines
+% def lines
 
-{seg(A, B): pos(A), pos(B)}.
+{seg(A, B): pos(A), pos(B)} :- |A-B|=n.
+{seg(A, B): pos(A), pos(B)} :- |A-B|=1.
+
 
 % crea la contraria
 :- seg(A, B), not seg(B, A).
@@ -47,6 +49,4 @@ nod(A) :- seg(A, _).
 % blanco en recta
 :- white(A), seg(B, A), seg(A, C), B\n!=C\n, B/n!=C/n, B!=C.
 :- white(C), seg(A, B), seg(B, C), seg(C, D), seg(D, E), A!=C, E!=C, A!=E, |A\n-C\n|+|C\n-E\n|=0.
-
 #show seg/2.
-
