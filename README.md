@@ -14,7 +14,7 @@ Si hacemos ```python3 encode.py masyu02.txt masyu02.lp``` genera un archivo masy
 python3 decode.py masyuKB.lp <masyuEntrada.txt> > <archivoDeSalida.txt>
 ```
 
-Si hacemos ```python3 decode.py masyuKB.lp masyu02.txt > solMasyu02.txt``` se guardará en solMasyu02.txt la solución de masyu02.txt.
+Si hacemos ```python3 decode.py masyuKB.lp masyu02.lp > solMasyu02.txt``` se guardará en solMasyu02.txt la solución de masyu02.txt.
 
 ---
 
