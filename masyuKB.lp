@@ -38,12 +38,11 @@ nod(A) :- line(A, _).
 % Todos los nodes tienen 4 conexiones
 :- nod(A), not 4{line(_, A); line(A, _)}.
 
+esquina(A) :- line(B, A), line(A, C), |B\n-C\n|=1, B!=C.
+
 % Todos los puntos tienen un nodo
 :- black(A), not nod(A).
 :- white(A), not nod(A).
-
-%% Esquinas
-esquina(B) :- line(A, B), line(B, C), A!=C, A\n!=C\n, A/n!=C/n.
 
 % Negro es esquina y tiene dos de longitud
 :- black(A), not esquina(A).
@@ -51,9 +50,9 @@ esquina(B) :- line(A, B), line(B, C), A!=C, A\n!=C\n, A/n!=C/n.
 
 % Blanco en recta y con una esquina
 :- white(A), esquina(A).
-:- white(B), line(A, B), line(B, C), A!=C, not esquina(A), not esquina(C).
+
+:- white(B), line(A, B), line(C, B), A!=C, not esquina(A), not esquina(C).
 
 seg(A,B) :- line(A,B), A<B.
 
-#show line/2.
 #show esquina/1.
