@@ -14,7 +14,14 @@ Si hacemos ```python3 encode.py masyu02.txt masyu02.lp``` genera un archivo masy
 python3 decode.py masyuKB.lp <masyuEntrada.txt> > <archivoDeSalida.txt>
 ```
 
-Si hacemos ```python3 decode.py masyuKB.lp masyu02.txt > solMasyu02.txt``` se guardará en solMasyu02.txt la solución de masyu02.txt.  
+Si hacemos ```python3 decode.py masyuKB.lp masyu02.txt > solMasyu02.txt``` se guardará en solMasyu02.txt la solución de masyu02.txt.
+
+---
+
+```sh
+python3 display.py masyuKB.lp <masyuEntrada.lp> drawmasyu.lp
+```
+Si hacemos ```python3 display.py masyuKB.lp masyu02.lp drawmasyu.lp``` se mostrara la solución masyu02 por pantalla.
 
 ## Normas del juego
 
