@@ -42,15 +42,18 @@ nod(A) :- line(A, _).
 :- black(A), not nod(A).
 :- white(A), not nod(A).
 
+%% Esquinas
+esquina(B) :- line(A, B), line(B, C), A!=C, A\n!=C\n, A/n!=C/n.
+
 % Negro es esquina y tiene dos de longitud
-:- black(A), line(B, A), line(A, C), |B\n-C\n|!=1, B!=C.
-:- black(A), line(B, A), line(A, C), line(D, B), A\n!=D\n, A/n!=D/n, A!=D.
-:- black(A), line(B, A), line(A, C), line(C, D), A\n!=D\n, A/n!=D/n, A!=D.
+:- black(A), not esquina(A).
+:- black(B), line(A, B), line(B, C), A!=C, esquina(A).
 
 % Blanco en recta y con una esquina
-:- white(A), line(B, A), line(A, C), B\n!=C\n, B/n!=C/n, B!=C.
-:- white(C), line(A, B), line(B, C), line(C, D), line(D, E), A!=C, E!=C, A!=E, |A\n-C\n|+|C\n-E\n|=0.
+:- white(A), esquina(A).
+:- white(B), line(A, B), line(B, C), A!=C, not esquina(A), not esquina(C).
 
 seg(A,B) :- line(A,B), A<B.
 
 #show line/2.
+#show esquina/1.
