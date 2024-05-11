@@ -10,7 +10,7 @@ El archivo de salida se debera ejecutar junto al archivo masyuKB.lp
 ```sh
 clingo 0 masyuKB.lp <masyu.lp>  
 ```  
-# Tiepos
+# Timepos
 Con este codigo en nuestro hardware tenemos los siguientes resultados:  
 
 | masyu  | tiempo (s) |
