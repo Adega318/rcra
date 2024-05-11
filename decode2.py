@@ -13,11 +13,8 @@ ctl.add("base", [], "size(n).")
 for arg in sys.argv[1:]:
     ctl.load(arg)
 ctl.ground([("base", [])])
-<<<<<<< HEAD
-ctl.configuration.solve.models="3"
-=======
+
 ctl.configuration.solve.models="0"
->>>>>>> 15a5860 (Ya funciona UwU)
 
 # Solving    
 size=0
