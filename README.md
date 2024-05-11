@@ -1,21 +1,19 @@
 # Participantes
 Enrique Adega Fernández  
 Alejandro Becerra Suárez
-
 # Uso
-Se debera combertir los .txt con el formato presentado en la practica usando:
+Se debera combertir los .txt con el formato presentado en la practica usando:  
 ```sh
-python3 encode.py <masyuEntrada.txt> <mansyu.lp>
+python3 encode.py <masyuEntrada.txt> <masyu.lp>  
 ```
-El archivo de salida se debera ejecutar junto al archivo mansyuKB.lp
+El archivo de salida se debera ejecutar junto al archivo masyuKB.lp  
 ```sh
-clingo 0 mansyuKB.lp <mansyu.lp>
-```
-
+clingo 0 masyuKB.lp <masyu.lp>  
+```  
 # Tiepos
-Con este codigo en nuestro hardware tenemos los siguientes resultados:
+Con este codigo en nuestro hardware tenemos los siguientes resultados:  
 
-| mansyu | tiempo |
+| masyu  | tiempo (s) |
 | ------ | ------ |
 | 00     | 0.003  |
 | 01     | 0.002  |
